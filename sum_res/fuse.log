@@ -6,16 +6,18 @@ Determining compilation order of HDL files
 Parsing VHDL file "/home/san/ESCOM/ComputerArchitecture/sum_res/sum_res.vhd" into library work
 Parsing VHDL file "/home/san/ESCOM/ComputerArchitecture/sum_res/TB_SUM_RES.vhd" into library work
 Starting static elaboration
+WARNING:HDLCompiler:746 - "/home/san/ESCOM/ComputerArchitecture/sum_res/sum_res.vhd" Line 64: Range is empty (null range)
 Completed static elaboration
 Fuse Memory Usage: 83040 KB
-Fuse CPU Usage: 1660 ms
+Fuse CPU Usage: 1330 ms
 Compiling package standard
 Compiling package std_logic_1164
-Compiling architecture programa of entity sum_res [sum_res_default]
+Compiling architecture programa of entity sum_res [\sum_res(4)\]
 Compiling architecture behavior of entity tb_sum_res
 Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
 Compiled 5 VHDL Units
 Built simulation executable /home/san/ESCOM/ComputerArchitecture/sum_res/TB_SUM_RES_isim_beh.exe
-Fuse Memory Usage: 648788 KB
-Fuse CPU Usage: 1700 ms
-GCC CPU Usage: 930 ms
+Fuse Memory Usage: 648808 KB
+Fuse CPU Usage: 1350 ms
+GCC CPU Usage: 250 ms

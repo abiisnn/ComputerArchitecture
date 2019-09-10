@@ -1,9 +1,6 @@
-set -tmpdir "xst/projnav.tmp"
-set -xsthdpdir "xst"
-run
--ifn sum_res.prj
--ofn sum_res
--ofmt NGC
+set -tmpdir "/home/san/ESCOM/ComputerArchitecture/sum_res/xst/projnav.tmp"
+set -xsthdpdir "/home/san/ESCOM/ComputerArchitecture/sum_res/xst"
+run -compileonly yes
 -p xc7a100t-3-csg324
 -top sum_res
 -opt_mode Speed
@@ -50,3 +47,4 @@ run
 -iob Auto
 -equivalent_register_removal YES
 -slice_utilization_ratio_maxmargin 5
+-ifn sum_res.prj

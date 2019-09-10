@@ -51,7 +51,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1568001217" xil_pn:in_ck="1214535491859448337" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1568001217">
+    <transform xil_pn:end_ts="1568139558" xil_pn:in_ck="1214535491859448337" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1568139558">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="TB_SUM_RES.vhd"/>
@@ -69,13 +69,13 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1568001334" xil_pn:in_ck="1214535491859448337" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1568001334">
+    <transform xil_pn:end_ts="1568139558" xil_pn:in_ck="1214535491859448337" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1568139558">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="TB_SUM_RES.vhd"/>
       <outfile xil_pn:name="sum_res.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1568001337" xil_pn:in_ck="1214535491859448337" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="8911645503675185794" xil_pn:start_ts="1568001334">
+    <transform xil_pn:end_ts="1568139560" xil_pn:in_ck="1214535491859448337" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="8911645503675185794" xil_pn:start_ts="1568139558">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
@@ -84,11 +84,14 @@
       <outfile xil_pn:name="TB_SUM_RES_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1568135175" xil_pn:in_ck="4336395052751054946" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="6756762073338462191" xil_pn:start_ts="1568135174">
+    <transform xil_pn:end_ts="1568139560" xil_pn:in_ck="4336395052751054946" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="6756762073338462191" xil_pn:start_ts="1568139560">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="TB_SUM_RES_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
@@ -124,6 +127,10 @@
     <transform xil_pn:end_ts="1568000189" xil_pn:in_ck="181719225590100430" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="-7992419688202158070" xil_pn:start_ts="1568000177">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="sum_res.lso"/>
       <outfile xil_pn:name="sum_res.ngc"/>

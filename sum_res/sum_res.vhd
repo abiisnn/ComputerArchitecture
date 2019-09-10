@@ -30,37 +30,56 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity sum_res is
-    Port ( A : in  STD_LOGIC_VECTOR (3 downto 0);
-           B : in  STD_LOGIC_VECTOR (3 downto 0);
+	GENERIC (
+		N : INTEGER := 4
+	);
+    Port ( A : in  STD_LOGIC_VECTOR (N - 1 downto 0);
+           B : in  STD_LOGIC_VECTOR (N - 1 downto 0);
            BINVERT : in  STD_LOGIC;
-           S : out  STD_LOGIC_VECTOR (3 downto 0);
+           S : out  STD_LOGIC_VECTOR (N - 1 downto 0);
            Cn : out  STD_LOGIC);
 end sum_res;
 
 architecture PROGRAMA of sum_res is
-signal C : std_logic_vector(4 downto 0);
-signal EB : std_logic_vector(3 downto 0); 
 begin
 
-	C(0) <= BINVERT;
+
+	SUM_RES: PROCESS(A, B, BINVERT)
+	VARIABLE G: std_logic_vector(N - 1 downto 0);
+	VARIABLE P : std_logic_vector(N - 1 downto 0);
+	VARIABLE EB : std_logic_vector(N - 1 downto 0);
+	VARIABLE C : std_logic_vector(N downto 0);
+	VARIABLE PROD: STD_LOGIC;
+	VARIABLE SUM: STD_LOGIC;
+	BEGIN
+	C(0):= BINVERT;
 	
-	EB(0) <= B(0) XOR BINVERT;
-	S(0) <= A(0) XOR EB(0) XOR C(0);
-	C(1) <= (A(0) AND EB(0)) OR (A(0) AND C(0)) OR ( EB(0) AND C(0));
+	principal: for I in 0 to N - 1 LOOP
+		EB(I) := B(I) XOR BINVERT;
+		P(I) := A(I) XOR EB(I);
+		G(I) := A(I) AND EB(I);
+		S(I) <= A(I) XOR EB(I) XOR C(I);
+		C(I + 1) := G(I);
+		SUM := '0';
+		CICLO: for J in 0 to I - 1 LOOP
+			PROD := '1';
+			CICLO2: for K in J + 1 to I LOOP
+				PROD := PROD AND P(K);
+			END LOOP CICLO2;
+			PROD := PROD AND G(J);
+			SUM := SUM OR PROD;
+		END LOOP CICLO;
+		C(I + 1) := C(I + 1) OR SUM;
+		PROD := '1';
+		CICLO3: for L in 0 to I LOOP
+			PROD := PROD AND P(L);
+		END LOOP CICLO3;
+		PROD := PROD AND C(0);
+		C(I + 1) := C(I + 1) OR PROD;
+	END LOOP principal;
 	
-	EB(1) <= B(1) XOR BINVERT;
-	S(1) <= A(1) XOR EB(1) XOR C(1);
-	C(2) <= (A(1) AND EB(1)) OR (A(1) AND C(1)) OR ( EB(1) AND C(1));
-	
-	EB(2) <= B(2) XOR BINVERT;
-	S(2) <= A(2) XOR EB(2) XOR C(2);
-	C(3) <= (A(2) AND EB(2)) OR (A(2) AND C(2)) OR ( EB(2) AND C(2));
-	
-	EB(3) <= B(3) XOR BINVERT;
-	S(3) <= A(3) XOR EB(3) XOR C(3);
-	C(4) <= (A(3) AND EB(3)) OR (A(3) AND C(3)) OR ( EB(3) AND C(3));
-	
-	Cn <= C(4);
+	Cn <= C(N);
+	END PROCESS SUM_RES;
 	
 end PROGRAMA;
 

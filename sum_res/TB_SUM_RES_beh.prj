@@ -1,0 +1,2 @@
+vhdl work "sum_res.vhd"
+vhdl work "TB_SUM_RES.vhd"

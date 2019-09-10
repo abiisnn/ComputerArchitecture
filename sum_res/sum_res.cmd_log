@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "/home/san/ESCOM/ComputerArchitecture/sum_res/sum_res.xst" -ofn "/home/san/ESCOM/ComputerArchitecture/sum_res/sum_res.syr" 

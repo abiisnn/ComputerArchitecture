@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/san/ESCOM/ComputerArchitecture/sum_res/TB_SUM_RES_isim_beh.exe" -prj "/home/san/ESCOM/ComputerArchitecture/sum_res/TB_SUM_RES_beh.prj" "work.TB_SUM_RES" 

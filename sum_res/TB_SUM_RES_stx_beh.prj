@@ -1,0 +1,2 @@
+vhdl isim_temp "sum_res.vhd"
+vhdl isim_temp "TB_SUM_RES.vhd"

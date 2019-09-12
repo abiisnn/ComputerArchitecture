@@ -1,0 +1,86 @@
+Nexys4 DDR  Reference
+Grupo de switches, 16 entradas posibles. 
+4 bits A, 4 bits B
+8 switches A, 8 switches B
+5 push b, uno para la senial de control
+
+A(7)-- V10
+A(6) -- V11
+...
+
+Los terminales tienen un codigo (v10, v11, ...)
+Switch de la zquierda bit mas significativo.
+
+Additional Resources
+Nexys 4 DDR Masteer UCF -- Toda la descripcion (Descargar)
+El archivo muestra como declarar cada una de las terminales
+Comenzar con la palabra NET, nombre (El que le pusimos a la entidad en el programa),
+ubicacion(erminal donde esta), atributos de esa terminal (IOSTANDARD dice nivel de voltaje)
+
+
+Agregar archivo de restricciones, FUENTE NUEVA/ Implementation Constrains File
+restricciones.ucf
+
+NET "B<0>"          LOC=J15 | IOSTANDARD=LVCMOS33; #IO_L3N_T0_DQS_EMCCLK_14
+NET "B<1>"          LOC=L16 | IOSTANDARD=LVCMOS33; #IO_L24N_T3_RS0_15
+NET "B<2>"          LOC=M13 | IOSTANDARD=LVCMOS33; #IO_L6NT0_D08_VREF_14
+NET "B<3>"          LOC=R15 | IOSTANDARD=LVCMOS33; #IO_L13_T2_MRCC_14
+NET "B<4>"          LOC=R17 | IOSTANDARD=LVCMOS33; #IO_L12_T1_MRCC_14
+NET "B<5>"          LOC=T18 | IOSTANDARD=LVCMOS33; #IO_L7_T1_D10_14
+NET "B<6>"          LOC=U18 | IOSTANDARD=LVCMOS33; #IO_L17N_T2_A13_D29_14
+NET "B<7>"          LOC=R13 | IOSTANDARD=LVCMOS33; #IO_L5N_T0_D07_14
+
+NET "A<0>"          LOC=T8 | IOSTANDARD=LVCMOS18; #IO_L24N_T3_34
+NET "A<1>"          LOC=U8 | IOSTANDARD=LVCMOS18; #IO_25_3
+NET "A<2>"         LOC=R16 | IOSTANDARD=LVCMOS33; #IO_L15PT2_DQS_RDWR_B_14
+NET "A<3>"         LOC=T13 | IOSTANDARD=LVCMOS33; #IO_L23PT3_A03_D19_14
+NET "A<4>"         LOC=H6 | IOSTANDARD=LVCMOS33; #IO_L24P_3_35
+NET "A<5>"         LOC=U12 | IOSTANDARD=LVCMOS33; #IO_L20PT3_A08_D24_14
+NET "A<6>"         LOC=U11 | IOSTANDARD=LVCMOS33; #IO_L19N_T3_A09_D25_VREF_14
+NET "A<7>"         LOC=V10 | IOSTANDARD=LVCMOS33; #IO_L21P_T3_DQS_14
+
+NET "BINVERT"           LOC=N17 | IOSTANDARD=LVCMOS33; #IO_L9P_T1_DQS_14
+
+NET "S<0>"         LOC=H17 | IOSTANDARD=LVCMOS33; #IO_L18P_T2_A24_15
+NET "S<1>"         LOC=K15 | IOSTANDARD=LVCMOS33; #IO_L24P_T3_RS1_15
+NET "S<2>"         LOC=J13 | IOSTANDARD=LVCMOS33; #IO_L17N_T2_A25_15
+NET "S<3>"         LOC=N14 | IOSTANDARD=LVCMOS33; #IO_L8P_T1_D11_14
+NET "S<4>"         LOC=R18 | IOSTANDARD=LVCMOS33; #IO_L7P_T1_D09_14
+NET "S<5>"         LOC=V17 | IOSTANDARD=LVCMOS33; #IO_L18N_T2_A11_D27_14
+NET "S<6>"         LOC=U17 | IOSTANDARD=LVCMOS33; #IO_L17P_T2_A14_D30_14
+NET "S<7>"         LOC=U16 | IOSTANDARD=LVCMOS33; #IO_L18P_T2_A12_D28_14
+
+NET "led<15>"        LOC=V11 | IOSTANDARD=LVCMOS33; #IO_L21N_T3_DQS_A06_D22_14
+
+
+
+
+CUandoo hacemos sintesis tambien obtiene cuantas compuertas logicas se necesitan
+para implementarlo.
+Implement design
+Translate, hace traduccion de compuertas a LUTs.
+Map, ubicar LUTs dentro de los CLBs).
+Place and Route, hace todo para interconectar LUTs, CLBs)
+
+COnfiguree Target Device.
+Boundary Scan
+Add Device, inicializar CADENA, empieza a buscar el que esta conectado.
+Agregas la FPGA
+Hay que leer los mensajes. XD
+SI quiero asignar un archivo .bit
+Elijo el archivo que acabo de generar.
+Si quieres mantener lo ultimo que hiciste en tu FPGA, entonces se
+debe decir SI al Flash PROMs. 
+
+Del lado izquierdo ir a la opcion PROGRAM.
+
+
+
+
+
+
+
+
+
+
+

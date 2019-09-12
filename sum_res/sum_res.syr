@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Reading design: sum_res.prj
@@ -116,7 +116,8 @@ Parsing architecture <PROGRAMA> of entity <sum_res>.
 *                            HDL Elaboration                            *
 =========================================================================
 
-Elaborating entity <sum_res> (architecture <PROGRAMA>) from library <work>.
+Elaborating entity <sum_res> (architecture <PROGRAMA>) with generics from library <work>.
+WARNING:HDLCompiler:746 - "/home/san/ESCOM/ComputerArchitecture/sum_res/sum_res.vhd" Line 64: Range is empty (null range)
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -124,6 +125,7 @@ Elaborating entity <sum_res> (architecture <PROGRAMA>) from library <work>.
 
 Synthesizing Unit <sum_res>.
     Related source file is "/home/san/ESCOM/ComputerArchitecture/sum_res/sum_res.vhd".
+        N = 8
     Summary:
 Unit <sum_res> synthesized.
 
@@ -131,8 +133,8 @@ Unit <sum_res> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Xors                                                 : 12
- 1-bit xor2                                            : 12
+# Xors                                                 : 24
+ 1-bit xor2                                            : 24
 
 =========================================================================
 
@@ -145,8 +147,8 @@ Macro Statistics
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Xors                                                 : 12
- 1-bit xor2                                            : 12
+# Xors                                                 : 24
+ 1-bit xor2                                            : 24
 
 =========================================================================
 
@@ -187,14 +189,15 @@ Top Level Output File Name         : sum_res.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 6
-#      LUT2                        : 1
-#      LUT4                        : 1
-#      LUT5                        : 2
-#      LUT6                        : 2
-# IO Buffers                       : 14
-#      IBUF                        : 9
-#      OBUF                        : 5
+# BELS                             : 32
+#      LUT2                        : 6
+#      LUT3                        : 5
+#      LUT4                        : 5
+#      LUT5                        : 6
+#      LUT6                        : 10
+# IO Buffers                       : 26
+#      IBUF                        : 17
+#      OBUF                        : 9
 
 Device utilization summary:
 ---------------------------
@@ -203,19 +206,19 @@ Selected Device : 7a100tcsg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice LUTs:                    6  out of  63400     0%  
-    Number used as Logic:                 6  out of  63400     0%  
+ Number of Slice LUTs:                   32  out of  63400     0%  
+    Number used as Logic:                32  out of  63400     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:      6
-   Number with an unused Flip Flop:       6  out of      6   100%  
-   Number with an unused LUT:             0  out of      6     0%  
-   Number of fully used LUT-FF pairs:     0  out of      6     0%  
+ Number of LUT Flip Flop pairs used:     32
+   Number with an unused Flip Flop:      32  out of     32   100%  
+   Number with an unused LUT:             0  out of     32     0%  
+   Number of fully used LUT-FF pairs:     0  out of     32     0%  
    Number of unique control sets:         0
 
 IO Utilization: 
- Number of IOs:                          14
- Number of bonded IOBs:                  14  out of    210     6%  
+ Number of IOs:                          26
+ Number of bonded IOBs:                  26  out of    210    12%  
 
 Specific Feature Utilization:
 
@@ -250,7 +253,7 @@ Speed Grade: -3
    Minimum period: No path found
    Minimum input arrival time before clock: No path found
    Maximum output required time after clock: No path found
-   Maximum combinational path delay: 1.566ns
+   Maximum combinational path delay: 3.511ns
 
 Timing Details:
 ---------------
@@ -258,23 +261,26 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 35 / 5
+  Total number of paths / destination ports: 271 / 9
 -------------------------------------------------------------------------
-Delay:               1.566ns (Levels of Logic = 4)
-  Source:            BINVERT (PAD)
-  Destination:       S<3> (PAD)
+Delay:               3.511ns (Levels of Logic = 7)
+  Source:            A<2> (PAD)
+  Destination:       Cn (PAD)
 
-  Data Path: BINVERT to S<3>
+  Data Path: A<2> to Cn
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             5   0.001   0.702  BINVERT_IBUF (BINVERT_IBUF)
-     LUT5:I0->O            3   0.097   0.389  C<2>1 (C<2>)
-     LUT6:I4->O            1   0.097   0.279  Cn1 (Cn_OBUF)
+     IBUF:I->O             6   0.001   0.534  A_2_IBUF (A_2_IBUF)
+     LUT3:I0->O            4   0.097   0.697  A[0]_A[2]_AND_86_o11 (A[0]_A[2]_AND_86_o1)
+     LUT6:I1->O            3   0.097   0.703  SUM_RES.C<7>131 (SUM_RES.C<7>13)
+     LUT6:I0->O            1   0.097   0.295  SUM_RES.C<7>2 (SUM_RES.C<7>2)
+     LUT5:I4->O            2   0.097   0.515  SUM_RES.C<7>3 (SUM_RES.C<7>)
+     LUT4:I1->O            1   0.097   0.279  Cn1 (Cn_OBUF)
      OBUF:I->O                 0.000          Cn_OBUF (Cn)
     ----------------------------------------
-    Total                      1.566ns (0.195ns logic, 1.371ns route)
-                                       (12.5% logic, 87.5% route)
+    Total                      3.511ns (0.486ns logic, 3.025ns route)
+                                       (13.8% logic, 86.2% route)
 
 =========================================================================
 
@@ -284,15 +290,15 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 8.71 secs
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 8.06 secs
  
 --> 
 
 
-Total memory usage is 480716 kilobytes
+Total memory usage is 481020 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

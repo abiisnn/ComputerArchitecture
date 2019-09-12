@@ -31,7 +31,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity sum_res is
 	GENERIC (
-		N : INTEGER := 4
+		N : INTEGER := 8
 	);
     Port ( A : in  STD_LOGIC_VECTOR (N - 1 downto 0);
            B : in  STD_LOGIC_VECTOR (N - 1 downto 0);

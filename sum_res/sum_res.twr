@@ -1,0 +1,148 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 3 -n
+3 -fastpaths -xml sum_res.twx sum_res.ncd -o sum_res.twr sum_res.pcf -ucf
+constraints.ucf
+
+Design file:              sum_res.ncd
+Physical constraint file: sum_res.pcf
+Device,package,speed:     xc7a100t,csg324,C,-3 (PRODUCTION 1.10 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+A<0>           |Cn             |   10.216|
+A<0>           |S<0>           |    8.608|
+A<0>           |S<1>           |    8.638|
+A<0>           |S<2>           |    9.919|
+A<0>           |S<3>           |    9.019|
+A<0>           |S<4>           |   10.360|
+A<0>           |S<5>           |   10.045|
+A<0>           |S<6>           |    9.913|
+A<0>           |S<7>           |   10.223|
+A<1>           |Cn             |   11.118|
+A<1>           |S<1>           |    8.562|
+A<1>           |S<2>           |    9.859|
+A<1>           |S<3>           |    8.959|
+A<1>           |S<4>           |    9.629|
+A<1>           |S<5>           |    9.314|
+A<1>           |S<6>           |   10.815|
+A<1>           |S<7>           |   11.125|
+A<2>           |Cn             |   10.815|
+A<2>           |S<2>           |    8.753|
+A<2>           |S<3>           |    7.347|
+A<2>           |S<4>           |    9.555|
+A<2>           |S<5>           |    9.776|
+A<2>           |S<6>           |   10.512|
+A<2>           |S<7>           |   10.822|
+A<3>           |Cn             |   10.401|
+A<3>           |S<3>           |    7.884|
+A<3>           |S<4>           |   10.120|
+A<3>           |S<5>           |    9.805|
+A<3>           |S<6>           |    9.749|
+A<3>           |S<7>           |   10.408|
+A<4>           |Cn             |   11.858|
+A<4>           |S<4>           |    9.137|
+A<4>           |S<5>           |   10.500|
+A<4>           |S<6>           |   11.059|
+A<4>           |S<7>           |   11.865|
+A<5>           |Cn             |    9.055|
+A<5>           |S<5>           |    8.202|
+A<5>           |S<6>           |    8.752|
+A<5>           |S<7>           |    9.062|
+A<6>           |Cn             |    8.108|
+A<6>           |S<6>           |    7.826|
+A<6>           |S<7>           |    8.115|
+A<7>           |Cn             |    7.523|
+A<7>           |S<7>           |    7.523|
+B<0>           |Cn             |   10.520|
+B<0>           |S<0>           |    7.959|
+B<0>           |S<1>           |    7.645|
+B<0>           |S<2>           |    8.940|
+B<0>           |S<3>           |    8.040|
+B<0>           |S<4>           |    9.705|
+B<0>           |S<5>           |    9.390|
+B<0>           |S<6>           |    9.945|
+B<0>           |S<7>           |   10.527|
+B<1>           |Cn             |   10.660|
+B<1>           |S<1>           |    7.582|
+B<1>           |S<2>           |    8.867|
+B<1>           |S<3>           |    7.967|
+B<1>           |S<4>           |    8.996|
+B<1>           |S<5>           |    8.811|
+B<1>           |S<6>           |   10.357|
+B<1>           |S<7>           |   10.667|
+B<2>           |Cn             |   10.760|
+B<2>           |S<2>           |    8.278|
+B<2>           |S<3>           |    7.061|
+B<2>           |S<4>           |    9.500|
+B<2>           |S<5>           |    9.721|
+B<2>           |S<6>           |   10.457|
+B<2>           |S<7>           |   10.767|
+B<3>           |Cn             |   10.054|
+B<3>           |S<3>           |    6.891|
+B<3>           |S<4>           |    9.721|
+B<3>           |S<5>           |    9.406|
+B<3>           |S<6>           |    9.402|
+B<3>           |S<7>           |   10.061|
+B<4>           |Cn             |   10.438|
+B<4>           |S<4>           |    7.729|
+B<4>           |S<5>           |    9.080|
+B<4>           |S<6>           |    9.639|
+B<4>           |S<7>           |   10.445|
+B<5>           |Cn             |    9.193|
+B<5>           |S<5>           |    8.026|
+B<5>           |S<6>           |    8.890|
+B<5>           |S<7>           |    9.200|
+B<6>           |Cn             |    7.916|
+B<6>           |S<6>           |    7.507|
+B<6>           |S<7>           |    7.923|
+B<7>           |Cn             |    7.626|
+B<7>           |S<7>           |    7.617|
+BINVERT        |Cn             |   10.522|
+BINVERT        |S<1>           |    7.089|
+BINVERT        |S<2>           |    8.378|
+BINVERT        |S<3>           |    7.478|
+BINVERT        |S<4>           |    9.644|
+BINVERT        |S<5>           |    9.329|
+BINVERT        |S<6>           |    9.946|
+BINVERT        |S<7>           |   10.529|
+---------------+---------------+---------+
+
+
+Analysis completed Thu Sep 12 13:15:57 2019 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 753 MB
+
+
+

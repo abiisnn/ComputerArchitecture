@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/home/san/ESCOM/ComputerArchitecture/sum_res/impact.xsl
+OUTFILE=/home/san/ESCOM/ComputerArchitecture/sum_res/impact.xsl
+FAMILY=None
+PART=None
+WORKINGDIR=/home/san/ESCOM/ComputerArchitecture/sum_res
+LICENSE=iMPACT
+USER_INFO=iMPACT

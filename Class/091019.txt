@@ -1,0 +1,58 @@
+¿Cómo se ejecuta un programa?
+// Programa número uo que hicimos, que solo cuenta.
+Darle reset al procesador.
+Bloque Pila:
+	Aquí esta el program counter, que empieza en 0. 
+	Esta almacenada la instrucción.
+	Ruta de cada uno delos campos dela instrucción: LI R0, #1
+	Se va a control
+	Bit 19-16: Se va WRITE REGISTER, donde se indica que registro quiero
+				escribir. Ahí escribo el número que esta almacenado en los
+				siguientes 16 bits.
+	Bit 15-0: Pasa por el multiplexor y pasa por WRITE DATA, ahí se guarda
+				el núnmero, en este caso 1.
+				Se habilita la señal de control WR.
+				Prende el bit en el archivo de registro, en ese momento lo
+				que esta en WRITE DATA, se guarda en el registro 0.
+	----> La microinstrucción para esto es: WR. 
+	Se lleva a cabo en un cliclo.
+	El contador de programa incremeta a 1.
+
+	Leo siguiente instrucción
+	Lo mismo que arriba, pero con los nuevos valores.
+	Instrucción de suma: ADD R1, R1, R0
+	Contador del programa es: 2
+	Salen 25 bits de la memoria del programa.
+	Al ser tipo R, tiene codigo de operacion 0
+	Bit 24-20 y 0-3: Pasan a la unidad de control
+	Siguiente campo, registro donde pondré el resultado:
+		Viaja para WRITE REGISTER
+	Bit 15-12: Entra al campo READ REGISTER 1, ahí se coloca
+	el primer número, en este caso 7, y sale por READ DATA 1.
+	Bit -----: Lo que tiene el registro 0 se va por READ DATA 2.
+	En la ALU, se pone código: 0011 y se hace la suma.
+	Pongo el resultado en el registro 1.
+	El número resultado, 8 viaja por los mux hasata llegar a WRITE DATA.
+	----> Se activan las lineas de control:
+		SWD WR ALUOP=0011 SR
+		// No activamos los mux de la ALU porque ya estan activadas por defecto  
+
+	Ahora estamos en SWI R1, 5
+	Ya usa direcciones de memoria
+	Se para unidad de control los bits 24-20
+	Bit 19-16: Manda para READ REGISTER 2
+	por READ DATA 2 se envia a MEMORIA DE DATOS
+	Se almacena en la direccion que esta en el bit 15-0
+	Lo mando por el MUX
+	Llega por D0-D15 y se activa WD
+	----> Lineas de control:
+		SR2 SDMD WD
+
+	Ahora estamos en B CICLO:
+	Los primeros se van a donde siempre
+	Bit 15-0: Tienen el número de la dirección a la que quiero salta
+	Para la instruccion 
+	----> Lineas de control:
+		WPC
+	para el siguiente ciclo se ejecuta la instrucción 2
+	-----------------------------------------------------------------

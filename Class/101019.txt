@@ -1,0 +1,4 @@
+Direcciones de memoria siempre son positivas, no hay negativas.
+El extensor de dirección solo pega 4 ceros
+El extensor de signo, se fija si es número positivo o negativo, si es positivo, relleno con 0
+si es negativo, relleno con 1.

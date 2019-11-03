@@ -67,7 +67,6 @@ SIGNAL RAM_DIST : MEMORIA;
 SIGNAL DI 		 : STD_LOGIC_VECTOR( N_DATA-1 downto 0 );
 
 begin
-
 	DI <= DATAOUT WHEN SHE = '1' else 
 			DIN   WHEN SHE = '0';	
 		

@@ -1,2 +1,3 @@
 vhdl isim_temp "stack.vhd"
+vhdl isim_temp "paquete.vhd"
 vhdl isim_temp "TEST.vhd"

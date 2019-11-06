@@ -1,2 +1,3 @@
 vhdl work "stack.vhd"
+vhdl work "paquete.vhd"
 vhdl work "TEST.vhd"

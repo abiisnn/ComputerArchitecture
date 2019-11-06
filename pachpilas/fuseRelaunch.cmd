@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/san/Desktop/pachpilas/TEST_isim_beh.exe" -prj "/home/san/Desktop/pachpilas/TEST_beh.prj" "work.TEST" 
+-intstyle "ise" -incremental -lib "secureip" -o "/home/nimda/proyectos/ComputerArchitecture/pachpilas/TEST_isim_beh.exe" -prj "/home/nimda/proyectos/ComputerArchitecture/pachpilas/TEST_beh.prj" "work.TEST" 

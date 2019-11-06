@@ -31,7 +31,8 @@ USE STD.TEXTIO.ALL;
 USE IEEE.STD_LOGIC_TEXTIO.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 use IEEE.numeric_std.ALL;
- 
+ library WORK;
+use WORK.PAQUETE.ALL;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
@@ -42,6 +43,8 @@ END TEST;
 ARCHITECTURE behavior OF TEST IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
+	 
+	 --my_entity : entity work.stack(rtl);
  
     COMPONENT stack
     PORT(
@@ -51,28 +54,28 @@ ARCHITECTURE behavior OF TEST IS
          UP : IN  std_logic;
          DW : IN  std_logic;
          CLK : IN  std_logic;
-         CLR : IN  std_logic;
-			SP: INOUT std_logic_vector(3 downto 0)
+         CLR : IN  std_logic
+			--SP: INOUT std_logic_vector(3 downto 0)
         );
     END COMPONENT;
-    
 
    --Inputs
-   signal D : std_logic_vector(15 downto 0) := (others => '0');
+   signal D   : std_logic_vector(15 downto 0) := (others => '0');
    signal WPC : std_logic := '0';
-   signal UP : std_logic := '0';
-   signal DW : std_logic := '0';
+   signal UP  : std_logic := '0';
+   signal DW  : std_logic := '0';
    signal CLK : std_logic := '0';
    signal CLR : std_logic := '0';
-	signal SP : std_logic_vector(3 downto 0) := (others => '0');
+	signal SP  : std_logic_vector(3 downto 0) := (others => '0');
 
 	--BiDirs
    signal Q : std_logic_vector(15 downto 0);
 
    -- Clock period definitions
    constant CLK_period : time := 10 ns;
- 
+
 BEGIN
+	--SP1 <= << signal.TEST.my_entity.w_blob : std_logic_vector( 3 downto 0 ) >>;
  
 	-- Instantiate the Unit Under Test (UUT)
    uut: stack PORT MAP (
@@ -82,8 +85,8 @@ BEGIN
           UP => UP,
           DW => DW,
           CLK => CLK,
-          CLR => CLR,
-			 SP => SP
+          CLR => CLR
+			 --SP => SP
         );
 
    -- Clock process definitions
@@ -97,6 +100,7 @@ BEGIN
  
 
    -- Stimulus process
+	
    stim_proc: process
 	
 	file input, output: text;
@@ -144,8 +148,14 @@ BEGIN
 			
 			read(linea_in, clr_var);
 			CLR <= clr_var;
+--			SP1 <= SP;
 			
 			wait until rising_edge(CLK);
+			IF( UP = '1' ) THEN
+				SP <= SP + 1;
+			ELSIF( DW = '1' ) THEN
+				SP <= SP - 1;
+			end if;
 			
 			hwrite(linea_out, D, right, 6);
 			write(linea_out, UP, right, 6);

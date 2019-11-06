@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2019-11-05T20:34:38</DateModified>
+  <DateModified>2019-11-05T23:40:59</DateModified>
   <ModuleName>stack</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>/home/san/Desktop/pachpilas/iseconfig/stack.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/san/Desktop/pachpilas/</ImplementationReportsDirectory>
+  <SummaryTimeStamp>2019-11-05T22:42:57</SummaryTimeStamp>
+  <SavedFilePath>/home/nimda/proyectos/ComputerArchitecture/pachpilas/iseconfig/stack.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/home/nimda/proyectos/ComputerArchitecture/pachpilas/</ImplementationReportsDirectory>
   <DateInitialized>2019-11-04T12:17:03</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

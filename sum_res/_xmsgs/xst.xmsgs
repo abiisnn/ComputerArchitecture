@@ -5,8 +5,5 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="746" delta="old" >"/home/san/ESCOM/ComputerArchitecture/sum_res/sum_res.vhd" Line 64: Range is empty (null range)
-</msg>
-
 </messages>
 

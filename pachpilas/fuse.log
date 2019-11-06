@@ -1,0 +1,27 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/san/Desktop/pachpilas/TEST_isim_beh.exe -prj /home/san/Desktop/pachpilas/TEST_beh.prj work.TEST 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/san/Desktop/pachpilas/stack.vhd" into library work
+Parsing VHDL file "/home/san/Desktop/pachpilas/TEST.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 86660 KB
+Fuse CPU Usage: 1420 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package textio
+Compiling package std_logic_textio
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package numeric_std
+Compiling architecture behavioral of entity stack [\stack(16,4)\]
+Compiling architecture behavior of entity test
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 10 VHDL Units
+Built simulation executable /home/san/Desktop/pachpilas/TEST_isim_beh.exe
+Fuse Memory Usage: 666656 KB
+Fuse CPU Usage: 1620 ms
+GCC CPU Usage: 4330 ms

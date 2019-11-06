@@ -7,3 +7,8 @@ map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -re
 par -w -intstyle ise -ol high -mt off sum_res_map.ncd sum_res.ncd sum_res.pcf 
 trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml sum_res.twx sum_res.ncd -o sum_res.twr sum_res.pcf -ucf constraints.ucf 
 bitgen -intstyle ise -f sum_res.ut sum_res.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc constraints.ucf -p xc7a100t-csg324-3 sum_res.ngc sum_res.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o sum_res_map.ncd sum_res.ngd sum_res.pcf 
+par -w -intstyle ise -ol high -mt off sum_res_map.ncd sum_res.ncd sum_res.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml sum_res.twx sum_res.ncd -o sum_res.twr sum_res.pcf -ucf constraints.ucf 
+bitgen -intstyle ise -f sum_res.ut sum_res.ncd 

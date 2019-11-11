@@ -1,0 +1,36 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity CODIGO is
+	Port( E : in STD_LOGIC_VECTOR (3 downto 0);
+		  S : out STD_LOGIC_VECTOR (6 downto 0));
+end CODIGO;
+
+architecture CONVERTIDOR of CODIGO;
+
+-- Para display de anodo --						  ABCDEFG
+CONSTANT COD0 : STD_LOGIC_VECTOR( 6 downto 0) := "0000001";
+CONSTANT COD1 : STD_LOGIC_VECTOR( 6 downto 0) := "1001111";
+CONSTANT COD2 : STD_LOGIC_VECTOR( 6 downto 0) := "0010010";
+CONSTANT COD3 : STD_LOGIC_VECTOR( 6 downto 0) := "0000110";
+CONSTANT COD4 : STD_LOGIC_VECTOR( 6 downto 0) := "1001100";
+CONSTANT COD5 : STD_LOGIC_VECTOR( 6 downto 0) := "0100100";
+CONSTANT COD6 : STD_LOGIC_VECTOR( 6 downto 0) := "0100000";
+CONSTANT COD7 : STD_LOGIC_VECTOR( 6 downto 0) := "0001111";
+CONSTANT COD8 : STD_LOGIC_VECTOR( 6 downto 0) := "0000000";
+CONSTANT COD9 : STD_LOGIC_VECTOR( 6 downto 0) := "0000100";
+
+begin
+	S <= COD0 WHEN( E = X"0" ) ELSE
+		 COD1 WHEN( E = X"1" ) ELSE
+		 COD2 WHEN( E = X"2" ) ELSE
+		 COD3 WHEN( E = X"3" ) ELSE
+		 COD4 WHEN( E = X"4" ) ELSE
+		 COD5 WHEN( E = X"5" ) ELSE
+		 COD6 WHEN( E = X"6" ) ELSE
+		 COD7 WHEN( E = X"7" ) ELSE
+		 COD8 WHEN( E = X"8" ) ELSE
+		 COD9 WHEN( E = X"9" ) ELSE
+		 COD0; 
+
+end CONVERTIDOR;

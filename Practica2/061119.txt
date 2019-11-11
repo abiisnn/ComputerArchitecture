@@ -1,0 +1,20 @@
+Notas:
+Colocar entidades de cada diseño en un paquete, para ponerlo enforma de componente.
+
+Nueva Fuente / Paquete /
+
+Poner nombre de: PAQUETE
+
+Al crear el PAQUETE, se pone como en comentario las estructuras. 
+Agregar entidades de cada programa:
+	- Memoria de datos
+	- Memoria de programa
+	- Archivo de registros
+	- ALU
+	- Stack
+	- Unidad de control
+Copiamos la entidad y se cambia la palabra ENTITY por COMPONENT.
+
+Se manda a llamar en un programa que se llama el PRINCIPAL.
+
+---- Tomar componentes: CONTADOR

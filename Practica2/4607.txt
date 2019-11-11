@@ -1,0 +1,58 @@
+Crear New Source Wizard
+Entity Name: REGISTRO
+Architecture name: PROGRAMA
+
+Port Name 		Direction 	BUS  	MSB  	LSB 
+D 				in 			check   7 		0
+Q				inout		check 	7 		0
+CLK, CLR 		in
+L, SHE 			int
+
+Nota: Como es el primero que se creo se pone un simbolo especial(Diferente a los demás).
+
+Copiar contenido del archivo: REGISTRO.vhd
+
+Agregar otro Módulo: (Min 09:20)
+New Source Wizard / VHDL Module / 
+Entity name: CONTADOR
+Architecture name: PROGRAMA
+
+Port Name 		Direction 	BUS  	MSB  	LSB 
+D 				in 			check   3 		0
+Q				inout		check 	3 		0
+CLK, CLR 		in
+L, I 			int
+
+Copiar contenido del archivo: CONTADOR.vhd
+
+--- Crear modulo
+Entity Name: CODIGO
+Architecture name: CONVERTIDOR
+Port Name 		Direction 	BUS  	MSB  	LSB 
+E 				in 			check   3 		0
+S				out			check 	6 		0
+
+Copiar contenido del archivo: CONVERTIDOR.vhd
+
+El mux se pone en el código principal.
+
+--- Crear mdulo
+Entity Name: CONTROL
+Architecture name: UNIDAD
+Port Name 					Direction 	BUS  	MSB  	LSB 
+INI, CLK, CLR, Z, QA0 		in 			 
+LA, SHE, LB, IB, SM			out				
+
+Copiar contenido del archivo: UNIDAD.vhd
+
+--- CREAR PAQUETE:
+Nueva Fuente / Paquete
+Copiar contenido del archivo: PAQUETE.vhd
+
+--- Crear modulo
+Entity Name: PRINCIPAL
+Architecture name: PROGRAMA
+Port Name  		Direction 	BUS  	MSB  	LSB 
+A 		   		in 			check 	7 		0
+INI, CLK, CLR  	in
+DISP			out 		check  	6 		0			

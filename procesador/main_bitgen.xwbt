@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\alan-\Documents\trabajos-escom\5\arquitectura\procesador\main.ncd
+OUTFILE=C:\Users\alan-\Documents\trabajos-escom\5\arquitectura\procesador\main.bit
+FAMILY=Artix7
+PART=xc7a100t-2csg324
+WORKINGDIR=C:\Users\alan-\Documents\trabajos-escom\5\arquitectura\procesador
+LICENSE=WebPack
+USER_INFO=__0_0_0

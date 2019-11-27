@@ -1,0 +1,255 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -v 3 -s 2 -n
+3 -fastpaths -xml main.twx main.ncd -o main.twr main.pcf
+
+Design file:              main.ncd
+Physical constraint file: main.pcf
+Device,package,speed:     xc7a100t,csg324,C,-2 (PRODUCTION 1.10 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock CLK
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+CLR         |   -0.403(R)|      FAST  |    2.393(R)|      SLOW  |CLK_BUFGP         |   0.000|
+            |   -0.313(F)|      FAST  |    2.402(F)|      SLOW  |CLK_BUFGP         |   0.000|
+FLAGS<1>    |   -1.049(F)|      FAST  |    3.522(F)|      SLOW  |CLK_BUFGP         |   0.000|
+FLAGS<2>    |   -1.052(F)|      FAST  |    3.525(F)|      SLOW  |CLK_BUFGP         |   0.000|
+FLAGS<3>    |   -1.063(F)|      FAST  |    3.537(F)|      SLOW  |CLK_BUFGP         |   0.000|
+LF          |   -0.355(F)|      FAST  |    2.749(F)|      SLOW  |CLK_BUFGP         |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Clock CLK to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+S<0>        |        13.528(R)|      SLOW  |         4.043(R)|      FAST  |CLK_BUFGP         |   0.000|
+            |        14.455(F)|      SLOW  |         4.177(F)|      FAST  |CLK_BUFGP         |   0.000|
+S<1>        |        12.770(R)|      SLOW  |         4.115(R)|      FAST  |CLK_BUFGP         |   0.000|
+            |        13.697(F)|      SLOW  |         4.130(F)|      FAST  |CLK_BUFGP         |   0.000|
+S<2>        |        11.326(R)|      SLOW  |         3.678(R)|      FAST  |CLK_BUFGP         |   0.000|
+            |        12.253(F)|      SLOW  |         3.812(F)|      FAST  |CLK_BUFGP         |   0.000|
+S<3>        |        12.895(R)|      SLOW  |         3.993(R)|      FAST  |CLK_BUFGP         |   0.000|
+            |        13.822(F)|      SLOW  |         4.008(F)|      FAST  |CLK_BUFGP         |   0.000|
+S<4>        |        12.593(R)|      SLOW  |         4.020(R)|      FAST  |CLK_BUFGP         |   0.000|
+            |        13.520(F)|      SLOW  |         4.035(F)|      FAST  |CLK_BUFGP         |   0.000|
+S<5>        |        13.478(R)|      SLOW  |         4.537(R)|      FAST  |CLK_BUFGP         |   0.000|
+            |        14.405(F)|      SLOW  |         4.552(F)|      FAST  |CLK_BUFGP         |   0.000|
+S<6>        |        13.085(R)|      SLOW  |         4.081(R)|      FAST  |CLK_BUFGP         |   0.000|
+            |        14.012(F)|      SLOW  |         4.096(F)|      FAST  |CLK_BUFGP         |   0.000|
+S<7>        |        13.087(R)|      SLOW  |         4.290(R)|      FAST  |CLK_BUFGP         |   0.000|
+            |        14.014(F)|      SLOW  |         4.305(F)|      FAST  |CLK_BUFGP         |   0.000|
+S<8>        |        13.867(R)|      SLOW  |         4.501(R)|      FAST  |CLK_BUFGP         |   0.000|
+            |        14.794(F)|      SLOW  |         4.516(F)|      FAST  |CLK_BUFGP         |   0.000|
+S<9>        |        13.079(R)|      SLOW  |         4.367(R)|      FAST  |CLK_BUFGP         |   0.000|
+            |        14.006(F)|      SLOW  |         4.443(F)|      FAST  |CLK_BUFGP         |   0.000|
+S<10>       |        13.213(R)|      SLOW  |         3.950(R)|      FAST  |CLK_BUFGP         |   0.000|
+            |        14.140(F)|      SLOW  |         4.084(F)|      FAST  |CLK_BUFGP         |   0.000|
+S<11>       |        13.935(R)|      SLOW  |         4.420(R)|      FAST  |CLK_BUFGP         |   0.000|
+            |        14.862(F)|      SLOW  |         4.554(F)|      FAST  |CLK_BUFGP         |   0.000|
+S<14>       |        13.806(R)|      SLOW  |         4.171(R)|      FAST  |CLK_BUFGP         |   0.000|
+            |        14.733(F)|      SLOW  |         4.305(F)|      FAST  |CLK_BUFGP         |   0.000|
+S<15>       |        13.317(R)|      SLOW  |         4.247(R)|      FAST  |CLK_BUFGP         |   0.000|
+            |        14.244(F)|      SLOW  |         4.337(F)|      FAST  |CLK_BUFGP         |   0.000|
+S<16>       |        13.718(R)|      SLOW  |         4.440(R)|      FAST  |CLK_BUFGP         |   0.000|
+            |        14.645(F)|      SLOW  |         4.455(F)|      FAST  |CLK_BUFGP         |   0.000|
+S<17>       |        13.472(R)|      SLOW  |         4.416(R)|      FAST  |CLK_BUFGP         |   0.000|
+            |        14.399(F)|      SLOW  |         4.550(F)|      FAST  |CLK_BUFGP         |   0.000|
+S<18>       |        13.103(R)|      SLOW  |         4.453(R)|      FAST  |CLK_BUFGP         |   0.000|
+            |        14.030(F)|      SLOW  |         4.587(F)|      FAST  |CLK_BUFGP         |   0.000|
+S<19>       |        13.097(R)|      SLOW  |         4.581(R)|      FAST  |CLK_BUFGP         |   0.000|
+            |        14.024(F)|      SLOW  |         4.596(F)|      FAST  |CLK_BUFGP         |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock CLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK            |    1.025|         |         |    0.728|
+---------------+---------+---------+---------+---------+
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+FUNCODE<0>     |S<0>           |    7.526|
+FUNCODE<0>     |S<3>           |    6.394|
+FUNCODE<0>     |S<4>           |    6.122|
+FUNCODE<0>     |S<5>           |    5.936|
+FUNCODE<0>     |S<6>           |    6.303|
+FUNCODE<0>     |S<10>          |    7.388|
+FUNCODE<0>     |S<11>          |    5.811|
+FUNCODE<0>     |S<12>          |    6.286|
+FUNCODE<0>     |S<13>          |    6.151|
+FUNCODE<0>     |S<14>          |    7.127|
+FUNCODE<1>     |S<0>           |    7.464|
+FUNCODE<1>     |S<3>           |    6.335|
+FUNCODE<1>     |S<4>           |    5.759|
+FUNCODE<1>     |S<5>           |    5.684|
+FUNCODE<1>     |S<6>           |    6.044|
+FUNCODE<1>     |S<10>          |    7.326|
+FUNCODE<1>     |S<11>          |    5.996|
+FUNCODE<1>     |S<12>          |    6.292|
+FUNCODE<1>     |S<13>          |    6.139|
+FUNCODE<1>     |S<14>          |    7.065|
+FUNCODE<2>     |S<0>           |    7.254|
+FUNCODE<2>     |S<3>           |    6.116|
+FUNCODE<2>     |S<4>           |    5.787|
+FUNCODE<2>     |S<5>           |    5.970|
+FUNCODE<2>     |S<6>           |    5.834|
+FUNCODE<2>     |S<10>          |    7.116|
+FUNCODE<2>     |S<11>          |    5.859|
+FUNCODE<2>     |S<12>          |    6.346|
+FUNCODE<2>     |S<13>          |    6.195|
+FUNCODE<2>     |S<14>          |    6.855|
+FUNCODE<3>     |S<0>           |    7.138|
+FUNCODE<3>     |S<3>           |    5.999|
+FUNCODE<3>     |S<4>           |    6.081|
+FUNCODE<3>     |S<5>           |    5.964|
+FUNCODE<3>     |S<6>           |    6.105|
+FUNCODE<3>     |S<10>          |    7.000|
+FUNCODE<3>     |S<11>          |    5.417|
+FUNCODE<3>     |S<12>          |    6.340|
+FUNCODE<3>     |S<13>          |    6.194|
+FUNCODE<3>     |S<14>          |    6.739|
+OPCODE<0>      |S<0>           |   10.696|
+OPCODE<0>      |S<1>           |    9.938|
+OPCODE<0>      |S<2>           |    8.494|
+OPCODE<0>      |S<3>           |   10.063|
+OPCODE<0>      |S<4>           |    9.761|
+OPCODE<0>      |S<5>           |   10.646|
+OPCODE<0>      |S<6>           |   10.253|
+OPCODE<0>      |S<7>           |   10.255|
+OPCODE<0>      |S<8>           |   11.035|
+OPCODE<0>      |S<9>           |   10.247|
+OPCODE<0>      |S<10>          |   10.381|
+OPCODE<0>      |S<11>          |   11.103|
+OPCODE<0>      |S<12>          |    7.978|
+OPCODE<0>      |S<13>          |    7.836|
+OPCODE<0>      |S<14>          |   10.974|
+OPCODE<0>      |S<15>          |   10.485|
+OPCODE<0>      |S<16>          |   10.886|
+OPCODE<0>      |S<17>          |   10.640|
+OPCODE<0>      |S<18>          |   10.271|
+OPCODE<0>      |S<19>          |   10.265|
+OPCODE<1>      |S<0>           |   10.545|
+OPCODE<1>      |S<1>           |    9.787|
+OPCODE<1>      |S<2>           |    8.343|
+OPCODE<1>      |S<3>           |    9.912|
+OPCODE<1>      |S<4>           |    9.610|
+OPCODE<1>      |S<5>           |   10.495|
+OPCODE<1>      |S<6>           |   10.102|
+OPCODE<1>      |S<7>           |   10.104|
+OPCODE<1>      |S<8>           |   10.884|
+OPCODE<1>      |S<9>           |   10.096|
+OPCODE<1>      |S<10>          |   10.230|
+OPCODE<1>      |S<11>          |   10.952|
+OPCODE<1>      |S<12>          |    7.917|
+OPCODE<1>      |S<13>          |    7.775|
+OPCODE<1>      |S<14>          |   10.823|
+OPCODE<1>      |S<15>          |   10.334|
+OPCODE<1>      |S<16>          |   10.735|
+OPCODE<1>      |S<17>          |   10.489|
+OPCODE<1>      |S<18>          |   10.120|
+OPCODE<1>      |S<19>          |   10.114|
+OPCODE<2>      |S<0>           |   10.155|
+OPCODE<2>      |S<1>           |    9.397|
+OPCODE<2>      |S<2>           |    7.953|
+OPCODE<2>      |S<3>           |    9.522|
+OPCODE<2>      |S<4>           |    9.220|
+OPCODE<2>      |S<5>           |   10.105|
+OPCODE<2>      |S<6>           |    9.712|
+OPCODE<2>      |S<7>           |    9.714|
+OPCODE<2>      |S<8>           |   10.494|
+OPCODE<2>      |S<9>           |    9.706|
+OPCODE<2>      |S<10>          |    9.840|
+OPCODE<2>      |S<11>          |   10.562|
+OPCODE<2>      |S<12>          |    7.800|
+OPCODE<2>      |S<13>          |    7.658|
+OPCODE<2>      |S<14>          |   10.433|
+OPCODE<2>      |S<15>          |    9.944|
+OPCODE<2>      |S<16>          |   10.345|
+OPCODE<2>      |S<17>          |   10.099|
+OPCODE<2>      |S<18>          |    9.730|
+OPCODE<2>      |S<19>          |    9.724|
+OPCODE<3>      |S<0>           |    9.996|
+OPCODE<3>      |S<1>           |    9.238|
+OPCODE<3>      |S<2>           |    7.794|
+OPCODE<3>      |S<3>           |    9.363|
+OPCODE<3>      |S<4>           |    9.061|
+OPCODE<3>      |S<5>           |    9.946|
+OPCODE<3>      |S<6>           |    9.553|
+OPCODE<3>      |S<7>           |    9.555|
+OPCODE<3>      |S<8>           |   10.335|
+OPCODE<3>      |S<9>           |    9.547|
+OPCODE<3>      |S<10>          |    9.681|
+OPCODE<3>      |S<11>          |   10.403|
+OPCODE<3>      |S<12>          |    7.804|
+OPCODE<3>      |S<13>          |    7.662|
+OPCODE<3>      |S<14>          |   10.274|
+OPCODE<3>      |S<15>          |    9.785|
+OPCODE<3>      |S<16>          |   10.186|
+OPCODE<3>      |S<17>          |    9.940|
+OPCODE<3>      |S<18>          |    9.571|
+OPCODE<3>      |S<19>          |    9.565|
+OPCODE<4>      |S<0>           |   10.039|
+OPCODE<4>      |S<1>           |    9.281|
+OPCODE<4>      |S<2>           |    7.837|
+OPCODE<4>      |S<3>           |    9.406|
+OPCODE<4>      |S<4>           |    9.104|
+OPCODE<4>      |S<5>           |    9.989|
+OPCODE<4>      |S<6>           |    9.596|
+OPCODE<4>      |S<7>           |    9.598|
+OPCODE<4>      |S<8>           |   10.378|
+OPCODE<4>      |S<9>           |    9.590|
+OPCODE<4>      |S<10>          |    9.724|
+OPCODE<4>      |S<11>          |   10.446|
+OPCODE<4>      |S<12>          |    7.584|
+OPCODE<4>      |S<13>          |    7.442|
+OPCODE<4>      |S<14>          |   10.317|
+OPCODE<4>      |S<15>          |    9.828|
+OPCODE<4>      |S<16>          |   10.229|
+OPCODE<4>      |S<17>          |    9.983|
+OPCODE<4>      |S<18>          |    9.614|
+OPCODE<4>      |S<19>          |    9.608|
+---------------+---------------+---------+
+
+
+Analysis completed Wed Nov 28 23:37:03 2018 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 412 MB
+
+
+

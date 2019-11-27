@@ -27,7 +27,12 @@
 --------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
- 
+USE STD.TEXTIO.ALL;
+USE IEEE.STD_LOGIC_TEXTIO.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use IEEE.numeric_std.ALL;
+ library WORK;
+use WORK.PAQUETE.ALL;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
@@ -38,6 +43,8 @@ END TEST;
 ARCHITECTURE behavior OF TEST IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
+	 
+	 --my_entity : entity work.stack(rtl);
  
     COMPONENT stack
     PORT(
@@ -48,25 +55,27 @@ ARCHITECTURE behavior OF TEST IS
          DW : IN  std_logic;
          CLK : IN  std_logic;
          CLR : IN  std_logic
+			--SP: INOUT std_logic_vector(3 downto 0)
         );
     END COMPONENT;
-    
 
    --Inputs
-   signal D : std_logic_vector(15 downto 0) := (others => '0');
+   signal D   : std_logic_vector(15 downto 0) := (others => '0');
    signal WPC : std_logic := '0';
-   signal UP : std_logic := '0';
-   signal DW : std_logic := '0';
+   signal UP  : std_logic := '0';
+   signal DW  : std_logic := '0';
    signal CLK : std_logic := '0';
    signal CLR : std_logic := '0';
+	signal SP  : std_logic_vector(3 downto 0) := (others => '0');
 
 	--BiDirs
    signal Q : std_logic_vector(15 downto 0);
 
    -- Clock period definitions
    constant CLK_period : time := 10 ns;
- 
+
 BEGIN
+	--SP1 <= << signal.TEST.my_entity.w_blob : std_logic_vector( 3 downto 0 ) >>;
  
 	-- Instantiate the Unit Under Test (UUT)
    uut: stack PORT MAP (
@@ -77,6 +86,7 @@ BEGIN
           DW => DW,
           CLK => CLK,
           CLR => CLR
+			 --SP => SP
         );
 
    -- Clock process definitions
@@ -90,134 +100,76 @@ BEGIN
  
 
    -- Stimulus process
+	
    stim_proc: process
+	
+	file input, output: text;
+	variable linea_in, linea_out: line;
+	variable str: string(1 to 5);
+	variable num: integer;
+	
+	variable D_var: std_logic_vector(15 downto 0);
+	variable up_var, down_var, wpc_var, clr_var: std_logic;
+	
    begin		
-      -- hold reset state for 100 ns.
-      wait for 100 ns;	
-		D    <= X"0000";
-		UP   <= '0';
-		DW   <= '0';
-		WPC  <= '0';
-		CLR  <= '1';
-      wait for CLK_period*10;
-      D    <= X"0000";
-		UP   <= '0';
-		DW   <= '0';
-		WPC  <= '0';
-		CLR  <= '0';
-		wait for CLK_period*10;
-		D    <= X"0000";
-		UP   <= '0';
-		DW   <= '0';
-		WPC  <= '0';
-		CLR  <= '0';
-		wait for CLK_period*10;
-		-- 5
-		D    <= X"0010";
-		UP   <= '1';
-		DW   <= '0';
-		WPC  <= '1';
-		CLR  <= '0';
-		wait for CLK_period*10;
-		-- 6
-		D    <= X"0000";
-		UP   <= '0';
-		DW   <= '0';
-		WPC  <= '0';
-		CLR  <= '1';
-		wait for CLK_period*10;
-		-- 7
-		D    <= X"0000";
-		UP   <= '0';
-		DW   <= '0';
-		WPC  <= '0';
-		CLR  <= '0';
-		wait for CLK_period*10;
-		-- 8
-		D    <= X"0000";
-		UP   <= '0';
-		DW   <= '0';
-		WPC  <= '0';
-		CLR  <= '0';
-		wait for CLK_period*10;
-		-- 9
-		D    <= X"0020";
-		UP   <= '1';
-		DW   <= '0';
-		WPC  <= '1';
-		CLR  <= '0';
-		wait for CLK_period*10;
-		-- 10
-		D    <= X"0000";
-		UP   <= '0';
-		DW   <= '0';
-		WPC  <= '0';
-		CLR  <= '0';
-		wait for CLK_period*10;
-		-- 11
-		D    <= X"0000";
-		UP   <= '0';
-		DW   <= '0';
-		WPC  <= '0';
-		CLR  <= '0';
-		wait for CLK_period*10;
-		-- 12
-		D    <= X"0000";
-		UP   <= '0';
-		DW   <= '0';
-		WPC  <= '0';
-		CLR  <= '0';
-		wait for CLK_period*10;
-		-- 13
-		D    <= X"0000";
-		UP   <= '0';
-		DW   <= '1';
-		WPC  <= '1';
-		CLR  <= '0';
-		wait for CLK_period*10;
-		-- 14
-		D    <= X"0000";
-		UP   <= '0';
-		DW   <= '0';
-		WPC  <= '0';
-		CLR  <= '0';
-		wait for CLK_period*10;
-		-- 15
-		D    <= X"0000";
-		UP   <= '0';
-		DW   <= '0';
-		WPC  <= '0';
-		CLR  <= '0';
-		wait for CLK_period*10;
-		-- 16
-		D    <= X"0000";
-		UP   <= '0';
-		DW   <= '1';
-		WPC  <= '1';
-		CLR  <= '0';
-		wait for CLK_period*10;
-		-- 17
-		D    <= X"0000";
-		UP   <= '0';
-		DW   <= '0';
-		WPC  <= '0';
-		CLR  <= '0';
-		wait for CLK_period*10;
-		-- 18
-		D    <= X"0000";
-		UP   <= '0';
-		DW   <= '0';
-		WPC  <= '0';
-		CLR  <= '0';
-		wait for CLK_period*10;
-		-- 19
-		D    <= X"0002";
-		UP   <= '0';
-		DW   <= '0';
-		WPC  <= '1';
-		CLR  <= '0';
-		wait for CLK_period*10;
-      -- insert stimulus here 
+      file_open(input, "input.txt", read_mode);
+		file_open(output, "output.txt", write_mode);
+		
+		str:= "    D";
+		write(linea_out, str, right, str'length + 1);
+		str:= "   UP";
+		write(linea_out, str, right, str'length + 1);
+		str:= "   DW";
+		write(linea_out, str, right, str'length + 1);
+		str:= "  WPC";
+		write(linea_out, str, right, str'length + 1);
+		str:= "  CLR";
+		write(linea_out, str, right, str'length + 1);
+		str:= "   SP";
+		write(linea_out, str, right, str'length + 1);
+		str:= "    Q";
+		write(linea_out, str, right, str'length + 1);
+		writeline(output, linea_out);
+		
+		while not endfile(input) loop
+			readline(input, linea_in);
+			
+			hread(linea_in, D_var);
+			D <= D_var;
+			
+			read(linea_in, up_var);
+			UP <= up_var;
+			
+			read(linea_in, down_var);
+			DW <= down_var;
+			
+			read(linea_in, wpc_var);
+			WPC <= wpc_var;
+			
+			read(linea_in, clr_var);
+			CLR <= clr_var;
+--			SP1 <= SP;
+			
+			wait until rising_edge(CLK);
+			IF( UP = '1' ) THEN
+				SP <= SP + 1;
+			ELSIF( DW = '1' ) THEN
+				SP <= SP - 1;
+			end if;
+			
+			hwrite(linea_out, D, right, 6);
+			write(linea_out, UP, right, 6);
+			write(linea_out, DW, right, 6);
+			write(linea_out, WPC, right, 6);
+			write(linea_out, CLR, right, 6);
+			write(linea_out, SP, right, 6);
+			hwrite(linea_out, Q, right, 6);
+			writeline(output, linea_out);
+			
+		end loop;
+		
+		file_close(input);
+		file_close(output);
 
       wait;
    end process;

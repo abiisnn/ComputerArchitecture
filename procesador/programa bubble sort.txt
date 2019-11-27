@@ -1,0 +1,33 @@
+LI R0 #23
+SWI R0, 10
+LI R0 #130
+SWI R0, 11
+LI R0 #70
+SWI R0, 12
+LI R0 #260
+SWI R0, 13
+LI R0 #-45
+SWI R0, 14
+LI R0 #180
+SWI R0, 15
+LI R0, #0
+LI R1, #0
+LI R2, #0
+LI R3, #6
+SUBI R4, R3, #1
+ext: BGETI R4, R0, fin
+LI, R1, #0
+SUB R5, R4, R0
+int: BGETI R5, R1, ext2
+LW R6, 10(R1)
+LW R7, 11(R1)
+BLETI R7, R6, noswap
+LW R2, 10(R1)
+SW R7, 10(R1)
+SW R2, 11(R1)
+noswap: ADDI R1, R1, #1
+B int
+ext2: ADDI R0, R0, #1
+B ext
+fin: NOP
+B fin

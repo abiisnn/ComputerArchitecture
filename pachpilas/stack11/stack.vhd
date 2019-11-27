@@ -38,15 +38,16 @@ entity stack is
            WPC       : in  STD_LOGIC;
            UP,DW		: in  STD_LOGIC;
            CLK,CLR   : in  STD_LOGIC);
+			  --SP        : inout STD_LOGIC_VECTOR(ADR_NIV-1 DOWNTO 0));
 end stack;
 
 architecture Behavioral of stack is
 	TYPE MEMORIA IS ARRAY ( 0 TO 2**ADR_NIV-1 ) 
 						OF STD_LOGIC_VECTOR( N-1 downto 0);
 	SIGNAL STACK  : MEMORIA;
-	SIGNAL SP     : STD_LOGIC_VECTOR( ADR_NIV-1 DOWNTO 0 );
 	SIGNAL DS     : STD_LOGIC_VECTOR( N-1 DOWNTO 0 );
 	SIGNAL I      : STD_LOGIC_VECTOR( N-1 DOWNTO 0 );
+	SIGNAL SP     : STD_LOGIC_VECTOR(ADR_NIV-1 DOWNTO 0) := X"0";
 	
 begin
 	PSTACK : PROCESS( CLK )

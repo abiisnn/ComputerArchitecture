@@ -1,0 +1,8 @@
+work	"condicion.vhd"
+work	"deco.vhd"
+work	"fsm.vhd"
+work	"main.vhd"
+work	"mem_funcion.vhd"
+work	"mem_operacion.vhd"
+work	"nivel.vhd"
+work	"registro.vhd"

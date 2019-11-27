@@ -16,7 +16,7 @@ package PAQUETE is
 		Port ( D : in STD_LOGIC_VECTOR( N-1 downto 0);
 			   Q : inout STD_LOGIC_VECTOR (N-1 downto 0);
 			   CLK, CLR : in STD_LOGIC;
-			   L, SHE : in STD_LOGIC);
+			   L, I : in STD_LOGIC);
 	end COMPONENT;
 
 	COMPONENT CODIGO is

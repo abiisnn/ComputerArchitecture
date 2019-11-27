@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/san/ESCOM/ComputerArchitecture/controlpach/test_isim_beh.exe" -prj "/home/san/ESCOM/ComputerArchitecture/controlpach/test_beh.prj" "work.test" 
